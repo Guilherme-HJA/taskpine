@@ -4,14 +4,14 @@
 
 ### Table of Contents
 
-1. [General Info](#general-info)
-1.1. [The Idea](#the-idea)
-1.2. [Future Implementations](#future-implementations)
-2. [Technologies](#technologies)
-2.1.  [Storing the Todos/Tasks](#storing-the-todostasks)
-3. [How to use this project](#how-to-use-this-project)
-3.1.  [Adding a new Todo/Task](#adding-a-new-todo--task)
-3.2.  [Deleting a Todo/Task](#deleting-a-tasktodo)
+1. [General Info](#general-info)  
+1.1. [The Idea](#the-idea)  
+1.2. [Future Implementations](#future-implementations)  
+2. [Technologies](#technologies)  
+2.1.  [Storing the Todos/Tasks](#storing-the-todostasks)  
+3. [How to use this project](#how-to-use-this-project)  
+3.1.  [Adding a new Todo/Task](#adding-a-new-todo--task)  
+3.2.  [Deleting a Todo/Task](#deleting-a-tasktodo)  
 
 ----------
 
