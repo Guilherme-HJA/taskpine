@@ -1,0 +1,55 @@
+@media screen and (max-width: 400px) {
+    .header h1 {
+        font-size: 3em;
+        letter-spacing: normal;
+        padding-left: 0;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2em;
+    }
+
+    .card-buttons {
+        justify-content: center;
+    }
+
+    .card-button {
+        width: 50px;
+        height: 50px;
+    }
+
+}
+
+
+/* Mind not this shennanigan with the Project Name */
+@media (min-width: 400px) and (max-width: 480px) {
+    .header h1 {
+        font-size: 3em;
+        letter-spacing: 10px;
+        padding-left: 0;
+    }
+
+    .header h2 {
+        font-size: 1.5em;
+    }
+
+    .card-button {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 530px) {
+    .header h1 {
+        letter-spacing: 50px;
+    }
+}
+
+@media (min-width: 530px) and (max-width: 900px) {
+    .header h1 {
+        padding-left: 0;
+        letter-spacing: 20px;
+    }
+}

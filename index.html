@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="./style/media.css" />
+    <script defer src="./script.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <title>Taskpine</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>TASKPINE</h1>
+      <h2>Your simple and Minimal Todo App</h2>
+    </header>
+    <main>
+      <section class="section">
+        <div class="wrap" x-data="task()" x-init="loadTasks">
+          <!-- Task form -->
+          <div class="field" x-data="{ taskName: '', taskDesc: '' }">
+            <form
+              x-on:submit.prevent="addTask(taskName, taskDesc); taskName = ''; taskDesc = ''"
+            >
+              <input
+                type="text"
+                placeholder="Enter your task here"
+                x-model="taskName"
+              />
+              <input
+                type="text"
+                placeholder="Task Description (Optional)"
+                x-model="taskDesc"
+              />
+              <button type="submit">Add Task</button>
+            </form>
+          </div>
+          <!-- End of task form -->>
+          <!-- Todos/Tasks container -->
+          <div class="container">
+            <template x-for="(task, index) in $store.tasks">
+              <!-- Cards -->
+              <div class="task-card" :class="task.done ? 'task-done' : ''">
+                <div class="card-text">
+                  <hgroup>
+                    <h2
+                      class="card-title"
+                      id="card-title"
+                      x-text="task.name"
+                    ></h2>
+                    <h3 class="card-subtitle" x-text="task.date"></h3>
+                  </hgroup>
+                  <div class="card-details">
+                    <p
+                      data-placeholder="..."
+                      class="card-description"
+                      id="card-description"
+                      x-text="task.desc"
+                    ></p>
+                  </div>
+                </div>
+                <!-- Card Buttons -->
+                <div class="card-buttons">
+                  <button
+                    @click="deleteTask(index)"
+                    class="card-button secondary"
+                  >
+                    <img
+                      src="./style/svgs/delete-10402.svg"
+                      alt="delete-10402.svg"
+                    />
+                  </button>
+                  <button
+                    @click="completeTask(index, task.done)"
+                    class="card-button"
+                  >
+                    <img
+                      src="./style/svgs/check-symbol-4809.svg"
+                      alt="check-symbol-4809.svg"
+                    />
+                  </button>
+                </div>
+              </div>
+              <!-- End of Cards -->
+            </template>
+          </div>
+          <!--End of Wrap-->
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
